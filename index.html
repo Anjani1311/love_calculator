@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Love calculator</title>
+  <link rel="stylesheet" type="text/css" href="bootstrap_v4.5.2.min.css">
+  <style >
+    body{
+      background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.3)) ,url('image5.jpeg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      width:100%;
+            height: 100vh;
+            position: relative;
+    }
+    header{
+             position: relative;
+             width: 100%;
+             top: 40%;
+             left: 50%;
+             transform: translate(-50%,-50%);
+             height: 50%;
+    }
+    .form-control:focus {
+        box-shadow: none;
+        border-color: teal;
+    }
+    .form-control{
+      border-color: teal;
+      border-radius: 17px 3px;
+            border-width: 2px;
+    }
+    
+
+  </style>
+ </head>
+<body>
+  <header>
+    <div class="card w-50 m-auto text-center" >
+      <div class="card-header bg-info text-white">LOVE CAlCULATOR</div>
+      <div class="card-body ">
+        <form class=" form-inline w-75 m-auto ">
+          <div class="form-group">
+            <input type="text" name="" class="form-control  text-center" id="name1" placeholder="your name">
+          </div>
+          <div><span class="pl-4 pr-4"> + </span></div>
+          <div class="form-group">
+            <input type="text" name="" class="form-control   text-center" id="name2" placeholder="your love name">
+          </div>
+        </form>
+        <br>
+        <div class="w-75 m-auto">
+          <button class="btn btn-secondary w-50 " onclick="lovecal()">click me</button>
+        </div>
+        <br>
+        <div class="w-25  m-auto">
+          <input type="text" name="" class="form-control text-center" id="lovevalue" placeholder="Love percentage">
+        </div>
+      </div>
+      <div class="card-footer bg-secondary text-white">Be forever with your lifepartner</div>
+    </div>
+  </header>
+    <script >
+      function lovecal()
+      {
+        var name1=document.getElementById("name1").value;
+        var name2=document.getElementById("name2").value;
+        if(name1==""){
+          alert("please enter your name.");
+        }
+        else if(name1.length<3){
+                alert("Name length must be greater than 3.");
+        }
+        else if(!isNaN(name1)){
+          alert("Number are not allowed.");
+        }
+        if(name2==""){
+          alert("please enter your love name.");
+        }
+        else if(name2.length<3){
+                alert("Name length must be greater than 3.");
+        }
+        else if(!isNaN(name2)){
+          alert("Number are not allowed.");
+        }
+            else{
+        var lovdata=Math.floor(Math.random()*100);
+        document.getElementById('lovevalue').value=lovdata+"%";
+         }
+      }
+    
+    </script>
+</body>
+</html>
